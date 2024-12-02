@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MobileProject.InfoCentrePage"
+             Title="Info Centre">
+    <Grid Background="Black">
+        <VisualStateManager.VisualStateGroups>
+            <VisualStateGroup>
+                <VisualState x:Name="Landscape">
+                    <VisualState.StateTriggers>
+                        <OrientationStateTrigger Orientation="Landscape" />
+                    </VisualState.StateTriggers>
+                    <VisualState.Setters>
+                        <Setter Property="RowDefinitions" Value="*" />
+                        <Setter Property="ColumnDefinitions" Value="*, *" />
+                    </VisualState.Setters>
+                </VisualState>
+                <VisualState x:Name="Portrait">
+                    <VisualState.StateTriggers>
+                        <OrientationStateTrigger Orientation="Portrait" />
+                    </VisualState.StateTriggers>
+                    <VisualState.Setters>
+                        <Setter Property="RowDefinitions" Value="*, 2*" />
+                        <Setter Property="ColumnDefinitions" Value="*" />
+                    </VisualState.Setters>
+                </VisualState>
+            </VisualStateGroup>
+        </VisualStateManager.VisualStateGroups>
+        <VerticalStackLayout Background="Black" >
+            <VisualStateManager.VisualStateGroups>
+                <VisualStateGroup>
+                    <VisualState x:Name="Landscape">
+                        <VisualState.StateTriggers>
+                            <OrientationStateTrigger Orientation="Landscape" />
+                        </VisualState.StateTriggers>
+                        <VisualState.Setters>
+                            <Setter Property="Grid.Row" Value="0" />
+                            <Setter Property="Grid.Column" Value="0" />
+                            <Setter Property="VerticalOptions" Value="Center" />
+                            <Setter Property="Margin" Value="10, 10, 10, 0" />
+                        </VisualState.Setters>
+                    </VisualState>
+                    <VisualState x:Name="Portrait">
+                        <VisualState.StateTriggers>
+                            <OrientationStateTrigger Orientation="Portrait" />
+                        </VisualState.StateTriggers>
+                        <VisualState.Setters>
+                            <Setter Property="Grid.Row" Value="0" />
+                            <Setter Property="Grid.Column" Value="0" />
+                            <Setter Property="VerticalOptions" Value="Start" />
+                            <Setter Property="Margin" Value="20, 20, 20, 0" />
+                        </VisualState.Setters>
+                    </VisualState>
+                </VisualStateGroup>
+            </VisualStateManager.VisualStateGroups>
+            <HorizontalStackLayout HorizontalOptions="Center" VerticalOptions="Center">
+                <Button x:Name="btnUSD" Text="USD" TextColor="White" BorderColor="white" BackgroundColor="Black" 
+                        BorderWidth="1" WidthRequest="65" HeightRequest="35" FontSize="15" FontAttributes="Bold" CornerRadius="20" Padding="0, 0, 0, 0" Margin="3, 3, 3, 3"
+                        Clicked="onUSDClicked"/>
+                <Button x:Name="btnAUD" Text="AUD" TextColor="White" BorderColor="white" BackgroundColor="Black" 
+                        BorderWidth="1" WidthRequest="65" HeightRequest="35" FontSize="15" FontAttributes="Bold" CornerRadius="20" Padding="0, 0, 0, 0" Margin="3, 3, 3, 3"
+                        Clicked="onAUDClicked"/>
+                <Button x:Name="btnEUR" Text="EUR" TextColor="White" BorderColor="white" BackgroundColor="Black" 
+                        BorderWidth="1" WidthRequest="65" HeightRequest="35" FontSize="15" FontAttributes="Bold" CornerRadius="20" Padding="0, 0, 0, 0" Margin="3, 3, 3, 3"
+                        Clicked="onEURClicked"/>
+                <Button x:Name="btnJPY" Text="JPY" TextColor="White" BorderColor="white" BackgroundColor="Black" 
+                        BorderWidth="1" WidthRequest="65" HeightRequest="35" FontSize="15" FontAttributes="Bold" CornerRadius="20" Padding="0, 0, 0, 0" Margin="3, 3, 3, 3"
+                        Clicked="onJPYClicked"/>
+            </HorizontalStackLayout>
+            <HorizontalStackLayout HorizontalOptions="Center" VerticalOptions="Center">
+                <Button x:Name="btnGBP" Text="GBP" TextColor="White" BorderColor="white" BackgroundColor="Black" 
+                        BorderWidth="1" WidthRequest="65" HeightRequest="35" FontSize="15" FontAttributes="Bold" CornerRadius="20" Padding="0, 0, 0, 0" Margin="3, 3, 3, 3"
+                        Clicked="onGBPClicked"/>
+                <Button x:Name="btnCNY" Text="CNY" TextColor="White" BorderColor="white" BackgroundColor="Black" 
+                        BorderWidth="1" WidthRequest="65" HeightRequest="35" FontSize="15" FontAttributes="Bold" CornerRadius="20" Padding="0, 0, 0, 0" Margin="3, 3, 3, 3"
+                        Clicked="onCNYClicked"/>
+                <Button x:Name="btnCAD" Text="CAD" TextColor="White" BorderColor="white" BackgroundColor="Black" 
+                        BorderWidth="1" WidthRequest="65" HeightRequest="35" FontSize="15" FontAttributes="Bold" CornerRadius="20" Padding="0, 0, 0, 0" Margin="3, 3, 3, 3"
+                        Clicked="onCADClicked"/>
+                <Button x:Name="btnCHF" Text="CHF" TextColor="White" BorderColor="white" BackgroundColor="Black" 
+                        BorderWidth="1" WidthRequest="65" HeightRequest="35" FontSize="15" FontAttributes="Bold" CornerRadius="20" Padding="0, 0, 0, 0" Margin="3, 3, 3, 3"
+                        Clicked="onCHFClicked"/>
+            </HorizontalStackLayout>
+            <HorizontalStackLayout HorizontalOptions="Center" VerticalOptions="Center">
+                <Button x:Name="btnHKD" Text="HKD" TextColor="White" BorderColor="white" BackgroundColor="Black" 
+                        BorderWidth="1" WidthRequest="65" HeightRequest="35" FontSize="15" FontAttributes="Bold" CornerRadius="20" Padding="0, 0, 0, 0" Margin="3, 3, 3, 3"
+                        Clicked="onHKDClicked"/>
+                <Button x:Name="btnSGD" Text="SGD" TextColor="White" BorderColor="white" BackgroundColor="Black" 
+                        BorderWidth="1" WidthRequest="65" HeightRequest="35" FontSize="15" FontAttributes="Bold" CornerRadius="20" Padding="0, 0, 0, 0" Margin="3, 3, 3, 3"
+                        Clicked="onSGDClicked"/>
+                <Button x:Name="btnSEK" Text="SEK" TextColor="White" BorderColor="white" BackgroundColor="Black" 
+                        BorderWidth="1" WidthRequest="65" HeightRequest="35" FontSize="15" FontAttributes="Bold" CornerRadius="20" Padding="0, 0, 0, 0" Margin="3, 3, 3, 3"
+                        Clicked="onSEKClicked"/>
+                <Button x:Name="btnKRW" Text="KRW" TextColor="White" BorderColor="white" BackgroundColor="Black" 
+                        BorderWidth="1" WidthRequest="65" HeightRequest="35" FontSize="15" FontAttributes="Bold" CornerRadius="20" Padding="0, 0, 0, 0" Margin="3, 3, 3, 3"
+                        Clicked="onKRWClicked"/>
+            </HorizontalStackLayout>
+            <HorizontalStackLayout HorizontalOptions="Center" VerticalOptions="Center">
+                <Button x:Name="btnNOK" Text="NOK" TextColor="White" BorderColor="white" BackgroundColor="Black" 
+                        BorderWidth="1" WidthRequest="65" HeightRequest="35" FontSize="15" FontAttributes="Bold" CornerRadius="20" Padding="0, 0, 0, 0" Margin="3, 3, 3, 3"
+                        Clicked="onNOKClicked"/>
+                <Button x:Name="btnNZD" Text="NZD" TextColor="White" BorderColor="white" BackgroundColor="Black" 
+                        BorderWidth="1" WidthRequest="65" HeightRequest="35" FontSize="15" FontAttributes="Bold" CornerRadius="20" Padding="0, 0, 0, 0" Margin="3, 3, 3, 3"
+                        Clicked="onNZDClicked"/>
+                <Button x:Name="btnINR" Text="INR" TextColor="White" BorderColor="white" BackgroundColor="Black" 
+                        BorderWidth="1" WidthRequest="65" HeightRequest="35" FontSize="15" FontAttributes="Bold" CornerRadius="20" Padding="0, 0, 0, 0" Margin="3, 3, 3, 3"
+                        Clicked="onINRClicked"/>
+            </HorizontalStackLayout>
+        </VerticalStackLayout>
+        <!-- <ScrollView Margin="20, 0 , 20, 10" VerticalScrollBarVisibility="Default" Background="Black" Grid.Row="1" Grid.Column="0"> -->
+        <ScrollView Background="Black" WidthRequest="400" >
+            <VisualStateManager.VisualStateGroups>
+                <VisualStateGroup>
+                    <VisualState x:Name="Landscape">
+                        <VisualState.StateTriggers>
+                            <OrientationStateTrigger Orientation="Landscape" />
+                        </VisualState.StateTriggers>
+                        <VisualState.Setters>
+                            <Setter Property="Grid.Row" Value="0" />
+                            <Setter Property="Grid.Column" Value="1" />
+                            <Setter Property="VerticalOptions" Value="Center" />
+                            <Setter Property="Margin" Value="10, 5, 10, 0" />
+                        </VisualState.Setters>
+                    </VisualState>
+                    <VisualState x:Name="Portrait">
+                        <VisualState.StateTriggers>
+                            <OrientationStateTrigger Orientation="Portrait" />
+                        </VisualState.StateTriggers>
+                        <VisualState.Setters>
+                            <Setter Property="Grid.Row" Value="1" />
+                            <Setter Property="Grid.Column" Value="0" />
+                            <Setter Property="VerticalOptions" Value="Start" />
+                            <Setter Property="Margin" Value="20, 0, 20, 10" />
+                        </VisualState.Setters>
+                    </VisualState>
+                </VisualStateGroup>
+            </VisualStateManager.VisualStateGroups>
+            <VerticalStackLayout Padding="30,0" Spacing="25">
+                <CollectionView ItemsSource="{Binding SelectedCurrencies}">
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <VerticalStackLayout Margin="0, 0, 0, 20">
+                                <Label Text="{Binding}" FontSize="20" FontAttributes="Bold" />
+                                <Image Source="{Binding ImagePath}"/>
+                                <HorizontalStackLayout Margin="5, 0, 0, 0">
+                                    <Label Text="Issuing: " FontSize="18" />
+                                    <Label Text="{Binding Country}" FontSize="18" />
+                                </HorizontalStackLayout>
+                                <Grid RowDefinitions="*" ColumnDefinitions="*, 3*, *, 1.2*" Margin="5, 0, 10, 0">
+                                    <Label Text="NOW" HorizontalOptions="Start" Grid.Row="0" Grid.Column="0" FontSize="18" />
+                                    <Label Text="{Binding LatestRatePerUSD}" Grid.Row="0" Grid.Column="1" FontSize="18" HorizontalTextAlignment="End" TextColor="Gold"/>
+                                    <Label Text="{Binding Symbol}" Grid.Row="0" Grid.Column="2" FontSize="18" HorizontalOptions="Center" />
+                                    <Label Text="/ USD" Grid.Row="0" Grid.Column="3" FontSize="18" />
+                                </Grid>
+                            </VerticalStackLayout>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+            </VerticalStackLayout>
+        </ScrollView>
+    </Grid>
+</ContentPage>

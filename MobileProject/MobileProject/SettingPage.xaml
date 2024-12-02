@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MobileProject.SettingPage"
+             Title="Setting">
+
+    <Grid Padding="80, 0, 80, 0" VerticalOptions="Center" BackgroundColor="Black">
+        <VisualStateManager.VisualStateGroups>
+            <VisualStateGroup>
+                <VisualState x:Name="Landscape">
+                    <VisualState.StateTriggers>
+                        <OrientationStateTrigger Orientation="Landscape" />
+                    </VisualState.StateTriggers>
+                    <VisualState.Setters>
+                        <Setter Property="RowDefinitions" Value="*" />
+                        <Setter Property="ColumnDefinitions" Value="*, *" />
+                    </VisualState.Setters>
+                </VisualState>
+                <VisualState x:Name="Portrait">
+                    <VisualState.StateTriggers>
+                        <OrientationStateTrigger Orientation="Portrait" />
+                    </VisualState.StateTriggers>
+                    <VisualState.Setters>
+                        <Setter Property="RowDefinitions" Value="*, *" />
+                        <Setter Property="ColumnDefinitions" Value="*" />
+                    </VisualState.Setters>
+                </VisualState>
+            </VisualStateGroup>
+        </VisualStateManager.VisualStateGroups>
+        <Grid RowDefinitions="*, *, *" ColumnDefinitions="3*,*, 3*" Padding="0,10,0,10" RowSpacing="50" >
+            <VisualStateManager.VisualStateGroups>
+                <VisualStateGroup>
+                    <VisualState x:Name="Landscape">
+                        <VisualState.StateTriggers>
+                            <OrientationStateTrigger Orientation="Landscape" />
+                        </VisualState.StateTriggers>
+                        <VisualState.Setters>
+                            <Setter Property="Grid.Row" Value="0" />
+                            <Setter Property="Grid.Column" Value="0" />
+                        </VisualState.Setters>
+                    </VisualState>
+                    <VisualState x:Name="Portrait">
+                        <VisualState.StateTriggers>
+                            <OrientationStateTrigger Orientation="Portrait" />
+                        </VisualState.StateTriggers>
+                        <VisualState.Setters>
+                            <Setter Property="Grid.Row" Value="0" />
+                            <Setter Property="Grid.Column" Value="0" />
+                        </VisualState.Setters>
+                    </VisualState>
+                </VisualStateGroup>
+            </VisualStateManager.VisualStateGroups>
+            <Label Text="My Currency" Grid.Row="0" Grid.Column="0" VerticalTextAlignment="Center"/>
+            <Border Stroke="White" Grid.Row="0" Grid.Column="2" HeightRequest="40" WidthRequest="60">
+                <Picker x:Name="MyCurrencyPicker"  VerticalTextAlignment="Center" HorizontalTextAlignment="Center"
+                SelectedIndexChanged="MyCurrencyChanged"/>
+            </Border>
+            <Label Text="Interested in" Grid.Row="1" Grid.Column="0" VerticalTextAlignment="Center"/>
+            <Border Stroke="White" Grid.Row="1" Grid.Column="2" HeightRequest="40" WidthRequest="60">
+                <Picker x:Name="InterestOnePicker" VerticalTextAlignment="Center" HorizontalTextAlignment="Center"
+                SelectedIndexChanged="InterestOneChanged"/>
+            </Border>
+            <Label Text="Interested in" Grid.Row="2" Grid.Column="0" VerticalTextAlignment="Center"/>
+            <Border Stroke="White" Grid.Row="2" Grid.Column="2" HeightRequest="40" WidthRequest="60">
+                <Picker x:Name="InterestTwoPicker" Grid.Row="2" Grid.Column="2" VerticalTextAlignment="Center" HorizontalTextAlignment="Center"
+                SelectedIndexChanged="InterestTwoChanged"/>
+            </Border>
+        </Grid>
+        <VerticalStackLayout VerticalOptions="Center">
+            <VisualStateManager.VisualStateGroups>
+                <VisualStateGroup>
+                    <VisualState x:Name="Landscape">
+                        <VisualState.StateTriggers>
+                            <OrientationStateTrigger Orientation="Landscape" />
+                        </VisualState.StateTriggers>
+                        <VisualState.Setters>
+                            <Setter Property="Grid.Row" Value="0" />
+                            <Setter Property="Grid.Column" Value="1" />
+                            <Setter Property="Margin" Value="20, 0, 20, 0" /> 
+                        </VisualState.Setters>
+                    </VisualState>
+                    <VisualState x:Name="Portrait">
+                        <VisualState.StateTriggers>
+                            <OrientationStateTrigger Orientation="Portrait" />
+                        </VisualState.StateTriggers>
+                        <VisualState.Setters>
+                            <Setter Property="Grid.Row" Value="1" />
+                            <Setter Property="Grid.Column" Value="0" />
+                            <Setter Property="Margin" Value="0, 20, 0, 20" />
+                        </VisualState.Setters>
+                    </VisualState>
+                </VisualStateGroup>
+            </VisualStateManager.VisualStateGroups>
+            <Label x:Name="DatabasePath"/>
+        </VerticalStackLayout>
+    </Grid>
+</ContentPage>

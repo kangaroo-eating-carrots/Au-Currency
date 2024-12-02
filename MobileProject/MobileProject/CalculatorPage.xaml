@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MobileProject.CalculatorPage"
+             Title="Calculator">
+    <Grid>
+        <VisualStateManager.VisualStateGroups>
+            <VisualStateGroup>
+                <VisualState x:Name="Landscape">
+                    <VisualState.StateTriggers>
+                        <OrientationStateTrigger Orientation="Landscape" />
+                    </VisualState.StateTriggers>
+                    <VisualState.Setters>
+                        <Setter Property="RowDefinitions" Value="*" />
+                        <Setter Property="ColumnDefinitions" Value="*, *" />
+                        <Setter Property="Padding" Value="40, 0, 40, 25" />
+                    </VisualState.Setters>
+                </VisualState>
+                <VisualState x:Name="Portrait">
+                    <VisualState.StateTriggers>
+                        <OrientationStateTrigger Orientation="Portrait" />
+                    </VisualState.StateTriggers>
+                    <VisualState.Setters>
+                        <Setter Property="RowDefinitions" Value="*, *" />
+                        <Setter Property="ColumnDefinitions" Value="*" />
+                        <Setter Property="Padding" Value="40, 25, 40, 25" />
+                    </VisualState.Setters>
+                </VisualState>
+            </VisualStateGroup>
+        </VisualStateManager.VisualStateGroups>
+        <VerticalStackLayout>
+            <VisualStateManager.VisualStateGroups>
+                <VisualStateGroup>
+                    <VisualState x:Name="Landscape">
+                        <VisualState.StateTriggers>
+                            <OrientationStateTrigger Orientation="Landscape" />
+                        </VisualState.StateTriggers>
+                        <VisualState.Setters>
+                            <Setter Property="Grid.Row" Value="0" />
+                            <Setter Property="Grid.Column" Value="0" />
+                            <Setter Property="VerticalOptions" Value="Center" />
+                        </VisualState.Setters>
+                    </VisualState>
+                    <VisualState x:Name="Portrait">
+                        <VisualState.StateTriggers>
+                            <OrientationStateTrigger Orientation="Portrait" />
+                        </VisualState.StateTriggers>
+                        <VisualState.Setters>
+                            <Setter Property="Grid.Row" Value="0" />
+                            <Setter Property="Grid.Column" Value="0" />
+                            <Setter Property="VerticalOptions" Value="End" />
+                        </VisualState.Setters>
+                    </VisualState>
+                </VisualStateGroup>
+            </VisualStateManager.VisualStateGroups>
+            <HorizontalStackLayout HorizontalOptions="End" Padding="0, 0, 5, 0" Margin="0, 0, 0, 7">
+                <Label Text=" " FontSize="40" Margin="0,0,5,0"/>
+                <Border HeightRequest="50" WidthRequest="80">
+                    <Picker x:Name="FirstPicker" SelectedIndexChanged="FirstPickerChanged"
+                            FontSize="22" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" />
+                </Border>
+                <Border HeightRequest="50">
+                    <Entry x:Name="FirstEntry" Focused="FirstEntryFocused" Completed="FirstEntryCompleted" WidthRequest="190"
+                           HorizontalOptions="End" Keyboard="Numeric" VerticalTextAlignment="Center" HorizontalTextAlignment="End" FontSize="22" Margin="0,0,5,0"/>
+                </Border>
+            </HorizontalStackLayout>
+            <HorizontalStackLayout HorizontalOptions="End" Padding="0, 0, 5, 0" Margin="0, 0, 0, 7">
+                <Label Text="+" FontSize="40" Margin="0,0,5,0"/>
+                <Border HeightRequest="50" WidthRequest="80">
+                    <Picker x:Name="SecondPicker" SelectedIndexChanged="SecondPickerChanged"
+                            FontSize="22" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" />
+                </Border>
+                <Border HeightRequest="50">
+                    <Entry x:Name="SecondEntry" Focused="SecondEntryFocused" Completed="SecondEntryCompleted" WidthRequest="190"
+                           HorizontalOptions="End" Keyboard="Numeric" VerticalTextAlignment="Center" HorizontalTextAlignment="End" FontSize="22" Margin="0,0,5,0"/>
+                </Border>
+            </HorizontalStackLayout>
+            <HorizontalStackLayout HorizontalOptions="End" Padding="0, 0, 5, 0" Margin="0, 0, 0, 7">
+                <Label Text="+" FontSize="40" Margin="0,0,5,0"/>
+                <Border HeightRequest="50" WidthRequest="80">
+                    <Picker x:Name="ThirdPicker" SelectedIndexChanged="ThirdPickerChanged"
+                            FontSize="22" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" />
+                </Border>
+                <Border HeightRequest="50">
+                    <Entry x:Name="ThirdEntry" Focused="ThirdEntryFocused" Completed="ThirdEntryCompleted" WidthRequest="190"
+                           HorizontalOptions="End" Keyboard="Numeric" VerticalTextAlignment="Center" HorizontalTextAlignment="End" FontSize="22" Margin="0,0,5,0"/>
+                </Border>
+            </HorizontalStackLayout>
+            <HorizontalStackLayout HorizontalOptions="End" Padding="0, 0, 5, 0" Margin="0, 0, 0, 7">
+                <Label Text="+" FontSize="40" Margin="0,0,5,0"/>
+                <Border HeightRequest="50" WidthRequest="80">
+                    <Picker x:Name="FourthPicker" SelectedIndexChanged="FourthPickerChanged"
+                            FontSize="22" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" />
+                </Border>
+                <Border HeightRequest="50">
+                    <Entry x:Name="FourthEntry" Focused="FourthEntryFocused" Completed="FourthEntryCompleted" WidthRequest="190"
+                           HorizontalOptions="End" Keyboard="Numeric" VerticalTextAlignment="Center" HorizontalTextAlignment="End" FontSize="22" Margin="0,0,5,0"/>
+                </Border>
+            </HorizontalStackLayout>
+        </VerticalStackLayout>
+        <VerticalStackLayout>
+            <VisualStateManager.VisualStateGroups>
+                <VisualStateGroup>
+                    <VisualState x:Name="Landscape">
+                        <VisualState.StateTriggers>
+                            <OrientationStateTrigger Orientation="Landscape" />
+                        </VisualState.StateTriggers>
+                        <VisualState.Setters>
+                            <Setter Property="Grid.Row" Value="0" />
+                            <Setter Property="Grid.Column" Value="1" />
+                            <Setter Property="VerticalOptions" Value="Center" />
+                        </VisualState.Setters>
+                    </VisualState>
+                    <VisualState x:Name="Portrait">
+                        <VisualState.StateTriggers>
+                            <OrientationStateTrigger Orientation="Portrait" />
+                        </VisualState.StateTriggers>
+                        <VisualState.Setters>
+                            <Setter Property="Grid.Row" Value="1" />
+                            <Setter Property="Grid.Column" Value="0" />
+                            <Setter Property="VerticalOptions" Value="Start" />
+                        </VisualState.Setters>
+                    </VisualState>
+                </VisualStateGroup>
+            </VisualStateManager.VisualStateGroups>
+            <HorizontalStackLayout HorizontalOptions="End" Padding="0, 0, 5, 0" Margin="0, 0, 0, 7">
+                <Label Text="+" FontSize="40" Margin="0,0,5,0"/>
+                <Border HeightRequest="50" WidthRequest="80">
+                    <Picker x:Name="FifthPicker" SelectedIndexChanged="FifthPickerChanged"
+                            FontSize="22" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" />
+                </Border>
+                <Border HeightRequest="50">
+                    <Entry x:Name="FifthEntry" Focused="FifthEntryFocused" Completed="FifthEntryCompleted" WidthRequest="190"
+                           HorizontalOptions="End" Keyboard="Numeric" VerticalTextAlignment="Center" HorizontalTextAlignment="End" FontSize="22" Margin="0,0,5,0"/>
+                </Border>
+            </HorizontalStackLayout>
+            <HorizontalStackLayout HorizontalOptions="End" Padding="0, 0, 5, 0" Margin="0, 0, 0, 7">
+                <Label Text="+" FontSize="40" Margin="0,0,5,0"/>
+                <Border HeightRequest="50" WidthRequest="80">
+                    <Picker x:Name="SixthPicker" SelectedIndexChanged="SixthPickerChanged"
+                            FontSize="22" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" />
+                </Border>
+                <Border HeightRequest="50">
+                    <Entry x:Name="SixthEntry" Focused="SixthEntryFocused" Completed="SixthEntryCompleted" WidthRequest="190"
+                           HorizontalOptions="End" Keyboard="Numeric" VerticalTextAlignment="Center" HorizontalTextAlignment="End" FontSize="22" Margin="0,0,5,0"/>
+                </Border>
+            </HorizontalStackLayout>
+            <HorizontalStackLayout HorizontalOptions="End" Padding="0, 0, 5, 0" Margin="0, 0, 0, 7">
+                <Label Text="=" FontSize="40" Margin="0,0,5,0" TextColor="Aqua"/>
+                <Border HeightRequest="50" WidthRequest="80">
+                    <Picker x:Name="ResultPicker" SelectedIndexChanged="ResultPickerChanged"
+                            FontSize="22" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" TextColor="Gold" />
+                </Border>
+                <Border HeightRequest="50">
+                    <Label x:Name="ResultLabel" WidthRequest="190" HorizontalOptions="End" VerticalTextAlignment="Center" 
+                           HorizontalTextAlignment="End" FontSize="22" Margin="0,0,5,0" TextColor="Gold"/>
+                </Border>
+            </HorizontalStackLayout>
+            <HorizontalStackLayout HorizontalOptions="End" Padding="0, 0, 5, 0" Margin="0, 0, 0, 7">
+                <Button x:Name="btnResult" WidthRequest="190" Text="Reset" TextColor="White" BackgroundColor="Blue" 
+                        BorderColor="White" BorderWidth="1" FontSize="22" FontAttributes="Bold" Clicked="OnResetClicked"/>
+            </HorizontalStackLayout>
+        </VerticalStackLayout>
+        
+    </Grid>
+</ContentPage>

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="MobileProject.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:MobileProject"
+    Shell.FlyoutBehavior="Disabled"
+    Title="MobileProject">
+
+    <TabBar>
+        <Tab Title="Setting">
+            <ShellContent
+                Title="Setting"
+                ContentTemplate="{DataTemplate local:SettingPage}"
+                Route="SettingPage" />
+        </Tab>
+        <Tab Title="Current">
+            <ShellContent
+                Title="Current Rates"
+                ContentTemplate="{DataTemplate local:CurrentRatePage}"
+                Route="CurrentRatePage" />
+        </Tab>
+        <Tab Title="Trend">
+            <ShellContent
+                Title="Histroical Trend"
+                ContentTemplate="{DataTemplate local:HistoricalTrendPage}"
+                Route="HistoricalTrendPage" />
+        </Tab>
+        <Tab Title="+=">
+            <ShellContent
+                Title="Calculator"
+                ContentTemplate="{DataTemplate local:CalculatorPage}"
+                Route="CalculatorPage" />
+        </Tab>
+        <Tab Title="Info">
+            <ShellContent
+                Title="Info Centre"
+                ContentTemplate="{DataTemplate local:InfoCentrePage}"
+                Route="CalculatorPage" />
+        </Tab>
+
+
+    </TabBar>
+</Shell>
